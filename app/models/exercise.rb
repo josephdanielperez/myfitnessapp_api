@@ -1,4 +1,4 @@
 class Exercise < ApplicationRecord
-    belongs_to :split
-    belongs_to :workout
+    has_and_belongs_to_many :split
+    has_and_belongs_to_many :workout
 end
