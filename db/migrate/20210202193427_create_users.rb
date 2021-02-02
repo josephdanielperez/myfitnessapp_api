@@ -4,7 +4,6 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :username
       t.string :name
       t.string :password
-      t.integer :workout_id
 
       t.timestamps
     end
