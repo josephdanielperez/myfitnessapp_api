@@ -1,3 +1,5 @@
+require 'bcrypt'
+
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :update, :destroy]
 
@@ -46,6 +48,6 @@ class UsersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def user_params
-      params.require(:user).permit(:username, :name, :password, :workout_id)
+      params.require(:user).permit(:username, :name, :password)
     end
 end
