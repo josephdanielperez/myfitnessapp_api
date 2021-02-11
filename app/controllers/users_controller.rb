@@ -40,6 +40,23 @@ class UsersController < ApplicationController
     @user.destroy
   end
 
+
+  def login
+    @user = User.find_by(username: params[:username])
+
+    if @user && @user.authenticate(params[:password])
+      token = encode_token({user_id: @user.id})
+      render json: {user: @user, token: token}
+    else
+      render json: {error: "invalid username or password"}
+    end
+  end
+
+
+  def auto_login
+    render json: @user
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
