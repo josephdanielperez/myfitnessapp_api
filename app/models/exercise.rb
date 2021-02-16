@@ -1,4 +1,4 @@
 class Exercise < ApplicationRecord
-    has_and_belongs_to_many :splits
-    has_and_belongs_to_many :workouts
+    has_many :exercise_splits
+    has_many :splits, through: :exercise_splits
 end

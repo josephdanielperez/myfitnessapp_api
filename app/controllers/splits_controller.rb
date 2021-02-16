@@ -10,7 +10,7 @@ class SplitsController < ApplicationController
 
   # GET /splits/1
   def show
-    render json: @split
+    render json: { split: @split, exercises: @split.exercises }
   end
 
   # POST /splits
@@ -46,6 +46,6 @@ class SplitsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def split_params
-      params.require(:split).permit(:name)
+      params.require(:split).permit(:name, :exercise_ids => [])
     end
 end

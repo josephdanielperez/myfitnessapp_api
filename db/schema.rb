@@ -10,26 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_02_210315) do
+ActiveRecord::Schema.define(version: 2021_02_14_015526) do
+
+  create_table "exercise_splits", force: :cascade do |t|
+    t.integer "exercise_id"
+    t.integer "split_id"
+    t.index ["exercise_id"], name: "index_exercise_splits_on_exercise_id"
+    t.index ["split_id"], name: "index_exercise_splits_on_split_id"
+  end
 
   create_table "exercises", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "exercises_splits", id: false, force: :cascade do |t|
-    t.integer "exercise_id", null: false
-    t.integer "split_id", null: false
-    t.index ["exercise_id"], name: "index_exercises_splits_on_exercise_id"
-    t.index ["split_id"], name: "index_exercises_splits_on_split_id"
-  end
-
-  create_table "exercises_workouts", id: false, force: :cascade do |t|
-    t.integer "exercise_id", null: false
-    t.integer "workout_id", null: false
-    t.index ["exercise_id"], name: "index_exercises_workouts_on_exercise_id"
-    t.index ["workout_id"], name: "index_exercises_workouts_on_workout_id"
   end
 
   create_table "splits", force: :cascade do |t|
@@ -48,7 +41,6 @@ ActiveRecord::Schema.define(version: 2021_02_02_210315) do
 
   create_table "workouts", force: :cascade do |t|
     t.string "name"
-    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
