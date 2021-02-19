@@ -6,8 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(username: 'joseph', name: 'Joseph Perez', password: 'password')
-
 e1 = Exercise.create(name: "Barbell Bench Press")
 e2 = Exercise.create(name: "Dumbbell Bench Press")
 e3 = Exercise.create(name: "Incline Barbell Bench Press")
