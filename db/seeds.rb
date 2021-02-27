@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+u1 = User.create(name: "Joseph Perez", username: "joseph", password_digest: "password")
+
 e1 = Exercise.create(name: "Barbell Bench Press", url: "https://www.youtube.com/watch?v=ysUTNll8JQ8")
 e2 = Exercise.create(name: "Dumbbell Bench Press", url: "https://www.youtube.com/watch?v=Y_7aHqXeCfQ")
 e3 = Exercise.create(name: "Incline Barbell Bench Press", url: "https://www.youtube.com/watch?v=SrqOu55lrYU")
