@@ -9,7 +9,7 @@ MyFitnessApp is a React/Redux application that uses a React JS frontend and Ruby
     - Customizable workouts
 
 # Installation:
-  * Clone this repository and the [frontend](https://github.com/josephdanielperez/myfitnessap-client) repository
+  * Clone this repository and the [frontend](https://github.com/josephdanielperez/myfitnessapp-client) repository
   * In the backend directory:
     * Execute 'bundle install'
     * Run 'rails db:create'
